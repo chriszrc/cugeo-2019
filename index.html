@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/index.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section
+					data-background-iframe="https://www.zevross.com"
+					data-background-interactive
+					data-background-color="#ffffff"
+					data-state="first-slide">
+				</section>
+				<section
+					data-background-iframe="https://www.zevross.com"
+					data-background-interactive
+					data-background-color="#ffffff"
+					data-state="second-slide">
+				</section>
+				<section
+					data-background-iframe="https://www.delawarewatershed.org/"
+					data-background-interactive
+					data-background-color="#ffffff"
+					data-state="second-slide">
+				</section>
+				<section
+					data-background-iframe="http://cdn.zevross.com/cu/mapmyair/v1/"
+					data-background-interactive
+					data-background-color="#ffffff"
+					data-state="second-slide">
+				</section>
+				<section
+					data-background-iframe="http://cdn.zevross.com/cu/mapmyair/v1/?routeId=408"
+					data-background-interactive
+					data-background-color="#ffffff"
+					data-state="second-slide">
+				</section>
+				<section
+					data-background-iframe="https://www.nrdc.org/climate-change-and-health-extreme-heat#/map"
+					data-background-interactive
+					data-background-color="#ffffff"
+					data-state="second-slide">
+				</section>
+				<section
+					data-background-iframe="https://www.tollfromcoal.org/"
+					data-background-interactive
+					data-background-color="#ffffff"
+					data-state="second-slide">
+				</section>
+				<section>Thank You</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+
+			Reveal.configure({ slideNumber: true });
+
+			var reloadInterval;
+
+			Reveal.addEventListener('first-slide',function(){
+				var iframe = document.querySelector('iframe[src="https://www.zevross.com"]');
+				reloadInterval = setInterval(function(){
+					iframe.src = iframe.src
+				},7000);
+			});
+
+			Reveal.addEventListener('second-slide',function(){
+				clearInterval(reloadInterval)
+			});
+		</script>
+	</body>
+</html>
