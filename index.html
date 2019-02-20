@@ -99,16 +99,17 @@
 
 			var reloadInterval;
 
-			Reveal.addEventListener('first-slide',function(){
-				var iframe = document.querySelector('iframe[src="https://www.zevross.com"]');
-				reloadInterval = setInterval(function(){
-					iframe.src = iframe.src
-				},7000);
-			});
+			//NOTE this can cause huge spikes in page traffic, so be careful with this
+			// Reveal.addEventListener('first-slide',function(){
+			// 	var iframe = document.querySelector('iframe[src="https://www.zevross.com"]');
+			// 	reloadInterval = setInterval(function(){
+			// 		iframe.src = iframe.src
+			// 	},7000);
+			// });
 
-			Reveal.addEventListener('second-slide',function(){
-				clearInterval(reloadInterval)
-			});
+			// Reveal.addEventListener('second-slide',function(){
+			// 	clearInterval(reloadInterval)
+			// });
 		</script>
 	</body>
 </html>
